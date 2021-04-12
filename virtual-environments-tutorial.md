@@ -111,7 +111,7 @@ Conda-pack is a command line tool that archives a conda environment, which inclu
 ```
 conda install -c conda-forge conda-pack
 ```
-    * `-c conda-forge` specifies that the package comes from the conda-forge channel instead of the main Anaconda repository.
+* `-c conda-forge` specifies that the package comes from the conda-forge channel instead of the main Anaconda repository.
     
 * Pack the environment with
 ```
@@ -143,8 +143,3 @@ source my_env/bin/deactivate
 * Conda's dependency resolution is better, but does take a little longer.
 
 <sub>\* I think they're biased against its data science reputation and have never had a problem with a conda environment, even when working on non-data science code.</sub>
-
-
-```python
-
-```
