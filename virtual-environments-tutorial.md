@@ -99,7 +99,7 @@ conda install scikit-learn=0.24.1
     conda env export > environment.yml
     ```
 * Include the `environment.yml` file in your git repository for future users of your code.  Here's a sample environment.yaml:
-*  ```
+```
 name: env-name
 channels:
   - conda-forge
@@ -111,6 +111,7 @@ variables:
   VAR1: valueA
   VAR2: valueB
  ```
+ 
 * To create a new environment from an environment.yml file:
     ```
     conda env create -n my-env-from-file -f environment.yml
