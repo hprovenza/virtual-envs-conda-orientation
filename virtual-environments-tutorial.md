@@ -83,7 +83,7 @@ When you're done working on your project, turn off the current virtual environme
 
 
 ## Installing More Packages
-* See the packages you already have with co
+* See the packages you already have with `conda list`.
 * Find available packages with:
 ```
 conda search scikit-learn
