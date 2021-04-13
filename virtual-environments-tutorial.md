@@ -4,16 +4,14 @@ Learning about virtual environments with conda
 * The standard central repository for python packages is PyPI (Python Package Index)
 
 ## What's wrong with just using one Python installation for everything?
-#### What if I want to use different versions of Python for different projects?
-Well, you could install another version of python and add it to your path.
+#### It's a pain to use different versions of Python for different projects.
+You *could* install another version of python and add it to your path.  Then what happens when you use pip?  You can't really be sure without additional information.  You'd have to know which version of python is first on your path, and maybe specify the whole path to the python you want to use to be sure.
 
-Then what happens when you use pip?  You can't really be sure without additional information.  You'd have to know which version of python is first on your path, and maybe specify the whole path to the python you want to use to be sure.
+#### Collisions between different projects that depend on conflicting versions of the same package.
+Python can't handle this situation on its own.  If ProjectA requires basicpackage 2.0 and ProjectB requires basicpackage 3.0, you're out of luck, they can't both exist on the same python.  Pip will silently replace the old version. 
 
-#### What if I have two projects that depend on conflicting versions of the same package?
-This is a big one: Python can't handle this on its own.  If ProjectA requires basicpackage 2.0 and ProjectB requires basicpackage 3.0, you're out of luck, they can't both exist on the same python.  Pip will silently replace the old version. 
-
-#### How do I document dependencies for other users?
-You can look at every file for the import statements. Or, you can `pip freeze > requirements.txt`, but that will export a list of every package you've ever installed, not just the ones you need.  Usually, your users are on their own.
+#### No way to document dependencies for other users.
+You can look at every file for the import statements and make a list. Or, you can `pip freeze > requirements.txt`, but that will export a list of every package you've ever installed, not just the ones you need.  Usually, your users are on their own.
 
 _What if there were a better way?_
 
