@@ -59,7 +59,8 @@ When prompted about running `conda init`, select yes.
 ## Creating an Environment
 * `conda create -n [name]` The base command.
 * `-n` specifies the name of my new environment.
-    * If you would prefer you can instead specify a path to the environment with `-p /prefix/for/env/location`/
+    * The environment will be located at `~/miniconda/envs/[name]`.
+    * If you would prefer you can instead specify a path to the environment with `-p /prefix/for/env/location`, but then you will have to use the whole prefix to activate it in the future.
 * `python=x.x` Specifying a python version is optional.
 * `packagename=x.x` Immediately install packagename to the environment, downloading it if you don't have it.  Specifying a version is optional; if not specified conda will choose the most recent version that is compatible with your other dependencies.
 
@@ -71,6 +72,7 @@ conda create -n my-new-env python=3.6 scipy=0.15.0 astroid babel
 ## Activating and Deactivating an Environment
 
 It could not be easier!
+* Get a list of available environments with `conda env list`.
 
 ![Switching from Conda's base environment, to my default environment, to the environment I created to make this presentation](activate-envs.png "Switching Between Conda Environments")
 
@@ -78,10 +80,13 @@ No more worrying about which python installation to use:  Just run `python my_sc
 
 When you're done working on your project, turn off the current virtual environment with `conda deactivate`.
 
+
+
 ## Installing More Packages
-* Find available versions with:
+* See the packages you already have with co
+* Find available packages with:
 ```
-conda search scikit-learn | tail
+conda search scikit-learn
 ```
 * With your environment activated, run:
 ```
@@ -93,10 +98,15 @@ conda install scikit-learn=0.24.1
 
 ## Documentation
 ![image.png](drake_requirements.jpeg)
+* You can add environment variables to your virtual environment with 
+    ```
+    conda env config vars set my_var=value
+    ```
 * When your code is ready, run:
     ```
     conda env export > environment.yml
     ```
+* You can include the --from-history option to only specify the packages you installed manually.
 * Include the `environment.yml` file in your git repository for future users of your code.  Here's a sample environment.yaml:
 ```
 name: env-name
@@ -129,6 +139,7 @@ conda install -c conda-forge conda-pack
 ```
 conda pack -n my-env-for-customer
 ```
+* I made one as a test: the simple environment was 87MB as a tar.gz.
 * Deliver to the .tar.tgz file to the target computer.  In the target's miniconda envs directory, create a new directory for your new env.  Activate the new environment, unpack it, and deactivate it with:
 ```
 cd /dir/to/miniconda3/envs/my_env
