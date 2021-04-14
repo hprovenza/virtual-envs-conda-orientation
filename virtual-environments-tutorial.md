@@ -1,7 +1,4 @@
 # Learning about virtual environments with conda
-#### Background information
-* The standard package manager in python is pip (Pip Installs Packages)
-* The standard central repository for python packages is PyPI (Python Package Index)
 
 ## What's wrong with just using one Python installation for everything?
 #### It's a pain to use different versions of Python for different projects.
