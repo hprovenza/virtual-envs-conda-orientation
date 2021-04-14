@@ -29,9 +29,9 @@ It is Best Practice<sup>TM</sup> to have a separate virtual environment for ever
 
 #### How does it work?
 * A virtual environment creates a new Python installation directory. 
-* In the bin/ subdirectory, it has hardlinks to the binaries of another, "base" Python installation directory.
+* In the bin/ subdirectory, it links to the binaries of another, "base" Python installation directory.
 * It points to its *own* `pkgs` or equivalent directories where packages can be installed.
-* When we activate a virtual environment, it sets your environment variables to point to the new, hardlinked python.
+* When we activate a virtual environment, it sets your environment variables to point to the new python.
 * When we deactivate it, everything goes back to how it was before.
 
 There are several packages that allow for creating python virtual environments (the default venv is good and easy to use) but my favorite is...
