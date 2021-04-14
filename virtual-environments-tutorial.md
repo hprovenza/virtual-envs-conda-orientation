@@ -128,7 +128,7 @@ variables:
 
 ## Delivering Environments
 Conda-pack is a command line tool that archives a conda environment, which includes all the binaries of the packages installed in the environment.  This is useful when you want to reproduce an environment with limited or no internet access.
-* Requirements:  Source and target machines are of the same OS type (Mac/Linux/Windows) and source has a miniconda installation.
+* Requirements:  Source and target machines are of the same OS type (Mac/Linux/Windows) and source has a conda installation.
 * Activate the base environment so that the package will be available to all sub-environments, then install conda-pack with:
 ```
 conda install -c conda-forge conda-pack
