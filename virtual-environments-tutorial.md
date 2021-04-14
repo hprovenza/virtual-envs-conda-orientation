@@ -1,4 +1,4 @@
-#Learning about virtual environments with conda
+# Learning about virtual environments with conda
 #### Background information
 * The standard package manager in python is pip (Pip Installs Packages)
 * The standard central repository for python packages is PyPI (Python Package Index)
